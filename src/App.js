@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -13,5 +12,10 @@ function App() {
     </div>
   );
 }
+
+class Board extends React.Component {
+  renderSquare(i) {
+    return <Square value={i} />;
+  }
 
 export default App;
