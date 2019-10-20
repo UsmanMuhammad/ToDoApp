@@ -21,6 +21,7 @@ body {
 
 .input {
     text-align: center;
+    margin: 5px;
 }
 
 .inputElement {
@@ -41,4 +42,29 @@ body {
 img {
     width: 35px;
     height: 35px;
+}
+
+.taskWrapper {
+    width: 500px;
+    height: 100px;
+    background-color: #f6f3ff;
+    border: 1px solid #ccc;
+    margin: 0px 700px;
+    border-radius: 5px;
+}
+
+h3 {
+    padding: 5px;
+    text-align: center;
+}
+
+.actions {
+    text-align: center;
+}
+
+.delete {
+    margin-right: 5px;
+}
+.done {
+    margin-right: 5px;
 }
