@@ -27,7 +27,8 @@ class App extends React.Component {
       data.push({
         id: counter,
         heading: heading,
-        done: false
+        done: false,
+        edit: true
       });
 
       this.setState({
@@ -48,9 +49,10 @@ class App extends React.Component {
 
           <div className="input">
             <input type="text" ref={(c) => this.heading = c} name="title" className="inputElement" name="task"/>
-            <button className="add" onClick = {this.handleClick}>
+            <span className = "add1" onClick = {this.handleClick}><i className="material-icons iconAdd">add</i></span>
+            {/*<button className="add" onClick = {this.handleClick}>
                 <img src={logo} />
-            </button>
+            </button>*/}
           </div>
           {taskListComponent}
         </div>

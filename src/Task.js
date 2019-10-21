@@ -7,6 +7,7 @@ class Task extends React.Component {
         super(props);
         this.taskDone = this.taskDone.bind(this)
         this.taskDelete = this.taskDelete.bind(this)
+        this.renderEditForm = this.renderEditForm.bind(this)
 
         this.state = {
             data: tasksList
@@ -20,7 +21,8 @@ class Task extends React.Component {
         this.setState({
             data,
           });
-        this.id.style.textDecoration = "line-through"
+        this.id.firstChild.style.textDecoration = "line-through"
+        console.log(this.id.firstChild)
 
         //add code here to change the status of the task in the backend
     }
@@ -43,18 +45,28 @@ class Task extends React.Component {
         //add code here to change the status of the task in the backend
     }
 
-    render() {
-        function taskDone() {
-        }
+    renderEditForm(e) {
+        console.log(this.state.data)
+            return (
+                <div className = "editForm">
+                    <input type="text" name="updatedItem" className="item" defaultValue={this.state.heading} />
+                    <button className="update-add-item">Update</button>
+                </div>
+            )
+    }
 
+    render() {
         return (
             <div className = "taskWrapper" ref={(c) => this.id = c}>
                 <h3 className= "heading">
                     {this.props.heading}
                 </h3>
                 <div className = "actions">
-                    <button className = "done" onClick = {this.taskDone}>Done</button>
-                    <button className = "delete" onClick = {() => this.taskDelete(this.props.id)}>Delete</button>
+                    {/*<button className = "done" onClick = {this.taskDone}>Done</button>
+                    <button className = "delete" onClick = {() => this.taskDelete(this.props.id)}>Delete</button>*/}
+                    <span className = "done1" onClick = {() => this.taskDone(this.props.id)}><i className="material-icons iconDone">done</i></span>
+                    <span className = "delete1" onClick = {() => this.taskDelete(this.props.id)}><i className="material-icons iconDelete">remove</i></span>
+                    <span className = "edit" onClick = {() => this.renderEditForm(this.props.id)}><i className="material-icons iconEdit">edit</i></span>
                 </div>
             </div>
         )
