@@ -29,12 +29,12 @@ body {
     min-height: 100vh;
     display: block;
     font-family: 'Open Sans', sans-serif;
+    background: white;
 }
 
 .app-header {
     text-align: center;
     min-height: 10vh;
-    color: #f6f3ff;
     font-size: 22px;
 }
 
@@ -63,7 +63,20 @@ body {
 }
 
 .add1 {
-    position: absolute;
+    background: white;
+    color: brown;
+    border: none;
+    margin-left: 3px;
+    cursor: pointer;
+    background: white;
+    padding: 4px 15px;
+    border: 1px solid brown;
+    border-radius: 3px;
+}
+
+.add1:hover {
+    background: brown;
+    color: white;
 }
 
 img {
@@ -72,16 +85,16 @@ img {
 }
 
 .taskWrapper {
-    width: 500px;
+    width: 70%;
     height: 100px;
     background-color: #f6f3ff;
     border: 1px solid #ccc;
-    margin: 0px 700px;
+    margin: 2px 190px;
     border-radius: 5px;
 }
 
 h3 {
-    padding: 5px;
+    padding: 25px;
     width: 50%;
     float: left;
 }
@@ -99,8 +112,51 @@ h3 {
     margin-right: 5px;
 }
 
-.done1, .delete1, .add1, .edit {
+.done1 {
     cursor: pointer;
+    background: white;
+    color: green;
+    border: none;
+    margin: 30px 0 0 2px;
+    padding: 4px 15px;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+
+.done1:hover {
+    background: green;
+    color: white;
+}
+
+.delete1 {
+    cursor: pointer;
+    background: white;
+    color: red;
+    border: none;
+    margin-left: 2px;
+    padding: 4px 15px;
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+.delete1:hover {
+    color: white;
+    background: red;
+}
+.edit {
+    cursor: pointer;
+    background: white;
+    color: purple;
+    border: none;
+    margin-left: 2px;
+    padding: 4px 15px;
+    border: 1px solid purple;
+    border-radius: 3px;
+}
+
+.edit:hover {
+    color: white;
+    background: purple;
 }
 
 .iconDone {
@@ -128,4 +184,13 @@ h3 {
 
 .editForm {
     display: none;
+}
+
+.container {
+    max-width: 400px;
+}
+
+input {
+    border: none;
+    border: 1px solid brown;
 }

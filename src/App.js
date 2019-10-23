@@ -39,7 +39,7 @@ class App extends React.Component {
     
     render() {    
         var taskListComponent = this.state.data.map((item) => 
-            <Task id = {item.id} heading = {item.heading} status = {item.done} />
+            <Task id = {item.id} heading = {item.heading} status = {item.done} edit = {item.edit} />
         )
       return (
         <div className="app">
@@ -47,14 +47,18 @@ class App extends React.Component {
             <h1>todo</h1>
           </header>
 
-          <div className="input">
-            <input type="text" ref={(c) => this.heading = c} name="title" className="inputElement" name="task"/>
-            <span className = "add1" onClick = {this.handleClick}><i className="material-icons iconAdd">add</i></span>
-            {/*<button className="add" onClick = {this.handleClick}>
-                <img src={logo} />
-            </button>*/}
-          </div>
+          {//<div className="input">
+          }
+          <div className = "container">
+            <form className="input" onSubmit={this.handleClick.bind(this)}>
+              <input type="text" ref={(c) => this.heading = c} name="title" className="inputElement" name="task"/>
+              {/*<span className = "add1" onClick = {this.handleClick}><i className="material-icons iconAdd">add</i></span>*/}
+              <button className="add1" onClick = {this.handleClick}>Create</button>
+          {//</div>
+          }
+            </form>
           {taskListComponent}
+          </div>
         </div>
       );
     }
